@@ -1,14 +1,13 @@
 ---
-title: About Hagura
+title: About 不吃西红柿
 layout: post
 permalink: /about/
 published: true
 ---
 
-For more themes please visit [https://jekyll-themes.com](https://jekyll-themes.com){: target="_blank"}
+正在努力书写自己的篇章
 
-Does the theme deserve a star?
-
-<!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/sharu725/hagura" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star sharu725/hagura on GitHub">Star</a>
+<!-- 
+Place this tag where you want the button to render.
+<a class="github-button" href="https://github.com/sharu725/hagura" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star sharu725/hagura on GitHub">Star</a> -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>

@@ -4,6 +4,6 @@ layout: post
 permalink: /contact/
 ---
 
-May be a contact form.
+开源节流，坚持种树
 
 Email: <a href="mailto:{{site.email}}">{{site.email}}</a>
