@@ -1,0 +1,10 @@
+.heart {
+    stroke-dasharray: 4;
+    stroke-dashoffset: 4;
+    animation: draw 2s ease-in infinite alternate;
+  }
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
