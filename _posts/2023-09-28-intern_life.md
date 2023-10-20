@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 从零开始的前端实习生活
+categories: ["流水账日记"]
 ---
 
 # 不知道起什么标题的标题

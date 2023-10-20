@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 关于实习遇到的问题总结
+categories: ["实习工作总结"]
 ---
 
 #  前端业务的小问题

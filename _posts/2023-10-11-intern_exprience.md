@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 实习琐事
+categories: ["流水账日记"]
 ---
 
 # 实习琐事
