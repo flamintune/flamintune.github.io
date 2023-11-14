@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 从零开始的lodash阅读(一)
-categories: ["生活感悟"]
+categories: ["lodash"]
 ---
 
 # 前景
