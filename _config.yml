@@ -8,7 +8,7 @@ email: xiaofu_hu@outlook.com
 highlighter: rouge
 
 permalink: /:title/
-paginate: 4
+paginate: 10
 paginate_path: /page:num/
 
 
