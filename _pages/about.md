@@ -1,6 +1,6 @@
 ---
 title: About 不吃西红柿
-layout: post
+layout: nav
 permalink: /about/
 published: true
 ---
