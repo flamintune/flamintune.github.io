@@ -4,45 +4,59 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1" name="viewport">
-        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
 
-        {% seo %}
-    </head>
+    {% seo %}
+</head>
 
-    <body style="background-color: rgb(255, 255, 255)">
-        <script async src="{{site.baseurl}}/assets/js/theme.min.js"></script>
-        <header>
-            <a href="{{site.baseurl}}/">
-                <div class="home"></div>
-            </a>
-        </header>
+<body style="background-color: rgb(255, 255, 255)">
+    <script async src="{{site.baseurl}}/assets/js/theme.min.js"></script>
+    <header>
+        <a href="{{site.baseurl}}/">
+            <div class="home"></div>
+        </a>
+    </header>
+    <div class="frame" id="Frame">
+        <div class="frame_fillTop"></div>
+        <div class="frame_fillBottom"></div>
+        <div class="frame_t1"></div>
+        <div class="frame_t2"></div>
+        <div class="frame_t3"></div>
+        <div class="frame_b1"></div>
+        <div class="frame_b2"></div>
+        <div class="frame_l"></div>
+        <div class="frame_r"></div>
+        <div class="frame_rect frame_rect1"></div>
+        <div class="frame_rect frame_rect2"></div>
+        <div class="frame_rect frame_rect3"></div>
+        <div class="frame_rect frame_rect4"></div>
+    </div>
+    <main>
+        <article>
+            {{ content }}
+        </article>
+    </main>
 
-        <main>
-            <article>
-                {{ content }}
-            </article>
-        </main>
-
-        <footer>
-            <div class="links">
-                <a href="{{site.baseurl}}/about/">About</a>
-                <a href="{{site.baseurl}}/contact/">Contact</a>
-                <a href="{{site.baseurl}}/categories.html">Categories</a>
-                <a href="{{site.baseurl}}/thoughts.html">thoughts</a>
-                <a class="theme" onclick="theme()">Dark/Light</a>
-            </div>
-            <p class="copy">
-                <small>Copyrights by
-                    {{site.title}}
-                    | Developed by
-                    <a href="http://webjeda.com">webjeda</a>
-                </small>
-            </p>
-        </footer>
-        {% include analytics.html %}
-    </body>
+    <footer>
+        <div class="links">
+            <a href="{{site.baseurl}}/about/">About</a>
+            <a href="{{site.baseurl}}/contact/">Contact</a>
+            <a href="{{site.baseurl}}/categories.html">Categories</a>
+            <a href="{{site.baseurl}}/thoughts.html">thoughts</a>
+            <a class="theme" onclick="theme()">Dark/Light</a>
+        </div>
+        <p class="copy">
+            <small>Copyrights by
+                {{site.title}}
+                | Developed by
+                <a href="http://webjeda.com">webjeda</a>
+            </small>
+        </p>
+    </footer>
+    {% include analytics.html %}
+</body>
 
 </html>
