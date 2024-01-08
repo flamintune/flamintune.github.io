@@ -17,6 +17,12 @@ body {
     max-width: 100%;
     padding: 1em;
   }
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 h1,
@@ -117,7 +123,7 @@ blockquote {
   opacity: 0.9;
   position: fixed;
   top: 50px;
-  left: 50px;
+  left: 70px;
   &:hover {
     opacity: 1;
   }
