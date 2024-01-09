@@ -1,7 +1,10 @@
 document.body.style.backgroundColor = sessionStorage.getItem('bg');
 document.body.style.color = sessionStorage.getItem('cc');
 const frame_fill = document.getElementsByClassName('frame_fill')
-frame_fill.forEach(item => item.style.backgroundColor = sessionStorage.getItem('bg'))
+for (let i = 0;i < frame_fill.length;i++){
+    let item = frame_fill[i]
+    item.style.backgroundColor = sessionStorage.getItem('bg')
+}
 function theme() {
     if (sessionStorage.getItem('bg') === 'rgb(255, 255, 255)') {
         sessionStorage.setItem('bg', 'rgb(6, 23, 37)');
@@ -18,7 +21,10 @@ function theme() {
 
     document.body.style.backgroundColor = sessionStorage.getItem('bg');
     document.body.style.color = sessionStorage.getItem('cc');
-    frame_fill.forEach(item => item.style.backgroundColor = sessionStorage.getItem('bg'))
+    for (let i = 0;i < frame_fill.length;i++){
+        let item = frame_fill[i]
+        item.style.backgroundColor = sessionStorage.getItem('bg')
+    }
 }
 
 
