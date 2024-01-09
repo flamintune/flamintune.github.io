@@ -238,7 +238,6 @@ footer {
   top: 0;
   width: 100%;
   height: 2em;
-  background-color: #ffffff;
 }
 
 .frame_fillBottom {
@@ -247,7 +246,6 @@ footer {
   bottom: 0;
   width: 100%;
   height: 2em;
-  background-color: #ffffff;
 }
 
 .frame_t1,
@@ -259,7 +257,7 @@ footer {
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: currentColor;
+  background-color: #60c17d;
 }
 
 .frame_t1 {
@@ -288,7 +286,7 @@ footer {
   top: 0;
   width: 1px;
   height: 100%;
-  background-color: currentColor;
+  background-color: #60c17d;
 }
 
 .frame_l {
@@ -315,7 +313,7 @@ footer {
   position: absolute;
   width: 20px;
   height: 10px;
-  background-color: currentColor;
+  background-color: #60c17d;
 }
 
 @media (min-width: 800px) {
