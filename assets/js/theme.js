@@ -21,6 +21,7 @@ function theme() {
 
     document.body.style.backgroundColor = sessionStorage.getItem('bg');
     document.body.style.color = sessionStorage.getItem('cc');
+    console.log(frame_fill)
     for (let i = 0;i < frame_fill.length;i++){
         let item = frame_fill[i]
         item.style.backgroundColor = sessionStorage.getItem('bg')

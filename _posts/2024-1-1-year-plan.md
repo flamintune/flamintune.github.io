@@ -1,7 +1,7 @@
 ---
 title: 2024年的我
 layout: post
-categories: ["2024","年度计划"]
+categories: ["2024","年度计划","生活感悟"]
 ---
 
 # 2024年的我
