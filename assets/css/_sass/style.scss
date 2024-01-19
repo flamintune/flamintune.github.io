@@ -38,6 +38,10 @@ h6 {
   text-transform: capitalize;
 }
 
+main {
+  padding: 2em 2px 30px;
+}
+
 a {
   color: $brand-color;
   text-decoration: none;
@@ -118,20 +122,21 @@ blockquote {
 .home {
   background-image: url(../images/left-arrow.svg);
   background-repeat: no-repeat;
-  height: 40px;
-  width: 40px;
+  height: 1.35em;
+  width: 1.35em;
   opacity: 0.9;
   position: fixed;
-  top: 50px;
-  left: 70px;
+  top: 1.65em;
+  left: 30px;
+  z-index: 1001;
   &:hover {
     opacity: 1;
   }
   @include media-query($on-laptop) {
-    top: 90%;
-    left: 90%;
-    height: 30px;
-    width: 30px;
+    top: 1.55em;
+    left:0px;
+    width: 1em;
+    height:1em;
     opacity: 0.6;
   }
 }
@@ -206,14 +211,12 @@ footer {
   top: 2em;
 }
 
-/* Footer navigation links */
-.links a {
-  margin-right: 1em;
-}
-
 /* Footer copyrights */
 .copy {
+  min-width: 400px;
+  text-align: center;
   color: #aaa;
+  pointer-events: all;
 }
 
 /* Horizontal Divider */
@@ -223,7 +226,7 @@ footer {
 
 .frame {
   position: fixed;
-  z-index: 3;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
@@ -237,7 +240,7 @@ footer {
   left: 0;
   top: 0;
   width: 100%;
-  height: 2em;
+  height: 3em;
 }
 
 .frame_fillBottom {
@@ -245,7 +248,16 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 2em;
+  height: 30px;
+  .copy {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 20px;
+    line-height: 20px;
+    bottom: 0;
+  }
 }
 
 .frame_t1,
@@ -269,7 +281,7 @@ footer {
 }
 
 .frame_t3 {
-  top: 2em;
+  top: 3em;
 }
 
 .frame_b1 {
@@ -293,7 +305,7 @@ footer {
   left: 20px;
 }
 
-@media (min-width: 800px) {
+@media (min-width: $on-laptop) {
   .frame_l {
     left: 60px;
   }
@@ -303,7 +315,7 @@ footer {
   right: 20px;
 }
 
-@media (min-width: 800px) {
+@media (min-width: $on-laptop) {
   .frame_r {
     right: 60px;
   }
@@ -316,10 +328,15 @@ footer {
   background-color: #60c17d;
 }
 
-@media (min-width: 800px) {
+@media (min-width: $on-laptop) {
   .frame_rect {
     width: 60px;
   }
+}
+
+.frame_l .frame_r .frame_rect {
+  //todo add animation
+  // transition: left 1s ease-in-out;
 }
 
 .frame_rect1 {
@@ -340,4 +357,40 @@ footer {
 .frame_rect4 {
   right: 0;
   bottom: 20px;
+}
+
+.frame_text1 {
+  position: absolute;
+  height: 1.35em;
+  line-height: 1.35em;
+  top: 30px;
+  left: 50%;
+  width: 90vw;
+  transform: translateX(-50%);
+  // min-width: 600px;
+  pointer-events: all;
+  .links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .frame_text1 {
+    line-height: 1em;
+    height: 1em;
+  }
+  .links {
+    font-size: 1px;
+  }
+  .frame_fillTop {
+    height: 2.5em;
+  }
+  .frame_t3 {
+    top: 2.5em;
+  }
+  .copy{
+    font-size: 1px;
+  }
 }

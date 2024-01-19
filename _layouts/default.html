@@ -21,7 +21,15 @@
     </header>
     <div class="frame" id="Frame">
         <div class="frame_fillTop frame_fill"></div>
-        <div class="frame_fillBottom frame_fill"></div>
+        <div class="frame_fillBottom frame_fill">
+            <p class="copy">
+                <small>Copyrights by
+                    {{site.title}}
+                    | Developed by
+                    <a href="http://webjeda.com">webjeda</a>
+                </small>
+            </p>
+        </div>
         <div class="frame_t1"></div>
         <div class="frame_t2"></div>
         <div class="frame_t3"></div>
@@ -33,6 +41,15 @@
         <div class="frame_rect frame_rect2"></div>
         <div class="frame_rect frame_rect3"></div>
         <div class="frame_rect frame_rect4"></div>
+        <div class="frame_text1">
+            <div class="links">
+                <a href="{{site.baseurl}}/about/">About</a>
+                <a href="{{site.baseurl}}/contact/">Contact</a>
+                <a href="{{site.baseurl}}/categories.html">Categories</a>
+                <a href="{{site.baseurl}}/thoughts.html">thoughts</a>
+                <a class="theme" onclick="theme()">Dark/Light</a>
+            </div>
+        </div>
     </div>
     <main>
         <article>
@@ -40,22 +57,6 @@
         </article>
     </main>
 
-    <footer>
-        <div class="links">
-            <a href="{{site.baseurl}}/about/">About</a>
-            <a href="{{site.baseurl}}/contact/">Contact</a>
-            <a href="{{site.baseurl}}/categories.html">Categories</a>
-            <a href="{{site.baseurl}}/thoughts.html">thoughts</a>
-            <a class="theme" onclick="theme()">Dark/Light</a>
-        </div>
-        <p class="copy">
-            <small>Copyrights by
-                {{site.title}}
-                | Developed by
-                <a href="http://webjeda.com">webjeda</a>
-            </small>
-        </p>
-    </footer>
     {% include analytics.html %}
 </body>
 
