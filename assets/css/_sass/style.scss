@@ -394,3 +394,26 @@ footer {
     font-size: 1px;
   }
 }
+
+.frame_year_progress_bar{
+  position: absolute;
+  height: 20px;
+  line-height: 20px;
+  top: 0;
+  left: 50%;
+  color: $brand-color;
+  font-size: 5px;
+  // width: 90vw;
+  transform: translateX(-50%);
+}
+
+.frame_no_tomato{
+  position: absolute;
+  height: 20px;
+  width: 17px;
+  top: 0;
+  left: 0;
+  // width: 90vw;
+  background-image: url(../images/no-tomato.png);
+  background-size: contain;
+}
