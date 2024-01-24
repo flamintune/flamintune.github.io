@@ -19,6 +19,10 @@ body {
   }
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
+  background-size: 10px 10px;
+  background-image: 
+    linear-gradient(to right, #d3d3d3 1px, transparent 1px),
+    linear-gradient(to bottom, #d3d3d3 1px, transparent 1px);
 }
 
 body::-webkit-scrollbar {
@@ -301,35 +305,6 @@ footer {
   bottom: 30px;
 }
 
-.frame_l,
-.frame_r {
-  position: absolute;
-  top: 0;
-  width: 1px;
-  height: 100%;
-  background-color: #60c17d;
-}
-
-.frame_l {
-  left: 20px;
-}
-
-@media (min-width: $on-laptop) {
-  .frame_l {
-    left: 60px;
-  }
-}
-
-.frame_r {
-  right: 20px;
-}
-
-@media (min-width: $on-laptop) {
-  .frame_r {
-    right: 60px;
-  }
-}
-
 .frame_rect {
   position: absolute;
   width: 20px;
@@ -431,6 +406,9 @@ footer {
   height: 20px;
   background: url("../images/gallery/gallery.svg") no-repeat; /* Ensure the path is correct */
   background-size: contain;
+}
+
+.line {
 }
 
 @media (max-width: 520px) {
