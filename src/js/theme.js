@@ -6,19 +6,29 @@ for (let i = 0; i < frame_fill.length; i++) {
     item.style.backgroundColor = sessionStorage.getItem('bg')
 }
 function theme() {
+    let isLight = true
     if (sessionStorage.getItem('bg') === 'rgb(255, 255, 255)') {
+        isLight = false
         sessionStorage.setItem('bg', 'rgb(6, 23, 37)');
         sessionStorage.setItem('cc', '#777');
     }
     else if (sessionStorage.getItem('bg') == null || undefined) {
+        isLight = false
         sessionStorage.setItem('bg', 'rgb(6, 23, 37)');
         sessionStorage.setItem('cc', '#777');
     }
     else if (sessionStorage.getItem('bg') === 'rgb(6, 23, 37)') {
+        isLight = true
         sessionStorage.setItem('bg', 'rgb(255, 255, 255)');
         sessionStorage.setItem('cc', '#333');
     }
-
+    // const dark = '#60c17d'
+    // const light = '#d3d3d3'
+    // const dark_bg = `linear-gradient(to right, ${dark} 1px, transparent 1px),
+    // linear-gradient(to bottom, ${dark} 1px, transparent 1px)`
+    // const light_bg = `linear-gradient(to right, ${light} 1px, transparent 1px),
+    // linear-gradient(to bottom, ${light} 1px, transparent 1px)`
+    // document.body.style.backgroundImage = dark;
     document.body.style.backgroundColor = sessionStorage.getItem('bg');
     document.body.style.color = sessionStorage.getItem('cc');
     console.log(frame_fill)
