@@ -1,6 +1,6 @@
 ### your site title here
 
-title: 不吃西红柿
+title: 不吃西红柿的日常
 # disabled because we are using a custom domain
 #baseurl: /hagura # name of the repository
 email: xiaofu_hu@outlook.com
@@ -8,7 +8,7 @@ email: xiaofu_hu@outlook.com
 highlighter: rouge
 
 permalink: /:title/
-paginate: 10
+paginate: 8
 paginate_path: /page:num/
 
 
