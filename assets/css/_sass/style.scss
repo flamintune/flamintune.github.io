@@ -426,3 +426,19 @@ footer {
     top: 2.5em;
   }
 }
+
+.thoughts-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  h1 {
+    border-radius: 8px;
+    padding: 10px;
+    background-color: $brand-color;
+    color: $background-color;
+    cursor: pointer;
+    user-select: none;
+  }
+}
