@@ -1,2 +1,3 @@
-make clean
-cp -r src dist
+make clean;
+ls
+cp -r src dist;
