@@ -23,7 +23,7 @@
 #     #     npm ci # Use npm ci for clean install (if using npm)
       
 #     - name: Build project
-#       run: |
+      # run: |
 #         make build # Run your build command, e.g. npm run build (modify if needed)
       
 #     - name: Deploy to GitHub Pages
