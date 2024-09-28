@@ -35,12 +35,11 @@ jobs:
         run: make build
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        branch: main
-
+        branch: "main"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./dist"
+          path: "/dist"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
