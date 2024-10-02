@@ -1,0 +1,15 @@
+[
+    {
+      "path": "/",
+      "title": "首页"
+    },
+    {
+      "path": "/about",
+      "title": "关于"
+    },
+    {
+      "path": "/develop-log",
+      "title": "开发日志"
+    }
+    
+]
