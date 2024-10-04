@@ -1,3 +1,3 @@
 make clean;
 cp -r src dist;
-ls;
+node script/post-dir.js

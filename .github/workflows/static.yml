@@ -31,14 +31,28 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # 您可以指定所需的 Node.js 版本
+      
+      - name: Install dependencies
+        run: npm ci # 如果您使用 npm
+        # 如果您使用 yarn，请使用：
+        # run: yarn install --frozen-lockfile
+      
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: check cur dir
+      
+      - name: Build project
         run: make build && pwd
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: "/home/runner/work/flamintune.github.io/flamintune.github.io/dist"
+      
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

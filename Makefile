@@ -1,7 +1,8 @@
 # Define the commands
 dev:
 	@echo "Starting development server..."
-	http-server ./src  # Modify this if you're using a different command
+	make build
+	http-server ./dist  # Modify this if you're using a different command
 
 build:
 	@echo "Building the project..."

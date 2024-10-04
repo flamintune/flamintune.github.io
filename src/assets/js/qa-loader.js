@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const p = document.createElement('p');
 
                 summary.textContent = item.question;
-                p.textContent = item.answer;
+                p.innerHTML = item.answer;
 
                 details.appendChild(summary);
                 details.appendChild(p);

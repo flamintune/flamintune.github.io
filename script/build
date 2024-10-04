@@ -1,2 +1,3 @@
-pwd
-cp src dist
+make clean;
+cp -r src dist;
+node post-dir.js
