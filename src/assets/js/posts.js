@@ -5,8 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("??")    
     fetch('list.json')
         .then(response => response.json())
-        .then(routes => {
-            const posts = routes.filter(route => route.type === 'post');
+        .then(posts => {
             const postListHTML = posts.map(post => `
                 <div class="post-preview">
                     <h3><a href="/posts/view.html?post=${encodeURIComponent(post.file)}">${post.title}</a></h3>
