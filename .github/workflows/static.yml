@@ -37,11 +37,6 @@ jobs:
         with:
           node-version: '18' # 您可以指定所需的 Node.js 版本
       
-      - name: Install dependencies
-        run: npm ci # 如果您使用 npm
-        # 如果您使用 yarn，请使用：
-        # run: yarn install --frozen-lockfile
-      
       - name: Setup Pages
         uses: actions/configure-pages@v5
       
