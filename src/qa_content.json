@@ -6,5 +6,9 @@
     {
         "question": "如何管理路由呢以及展示sitemap当前网站的路由 2025-10-02",
         "answer": "之前的方式是通过配置一个 routes.json 文件来实现 sitemap 的更新，但是这样每次添加一个路由都需要手动去配置一下，好麻烦😫<br/> 现在因为还不是SPA的架构，所以打算在compile-time去遍历对应目录的HTML结构来生成所有的route，那么用什么语言来写，本来想着用Shell，但是太麻烦了，还是用nodejs，或者deno都行，与此同时ci/cd机器上也要安装对应的nodejs环境"
+    },
+    {
+        "question":"对于博客的形式，常用的是 markdown ，但是由于是手写还需要去解析markdown里面的特殊语法，去转化成对应的 HTML 标签，为什么是 markdown，用纯文本 txt 呢",
+        "answer":"感觉这其实是一个生态问题，markdown的生态太成熟了，无论是在IDE上还是展示端上，都有大量现成的工具，因此后来人也继而也选择了markdown这种语法形式来写博客。作为一个从小就喜欢装怪的人，自然是想整点不一样的活，暂时还没想到什么好的办法，就先不解析 markdown，当成 innerHTML 直接展示吧"
     }
 ]
