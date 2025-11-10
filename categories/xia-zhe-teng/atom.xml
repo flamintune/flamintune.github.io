@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title> - 瞎折腾</title>
+    <link rel="self" type="application/atom+xml" href="https://flamintune.github.io/categories/xia-zhe-teng/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://flamintune.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-10-22T00:00:00+00:00</updated>
+    <id>https://flamintune.github.io/categories/xia-zhe-teng/atom.xml</id>
+    <entry xml:lang="en">
+        <title>我在SEO方面的折腾 10.22~10.28 完</title>
+        <published>2025-10-22T00:00:00+00:00</published>
+        <updated>2025-10-22T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://flamintune.github.io/seo/"/>
+        <id>https://flamintune.github.io/seo/</id>
+        
+        <content type="html" xml:base="https://flamintune.github.io/seo/">&lt;h2 id=&quot;chu-bu-jie-lun-10-28&quot;&gt;初步结论 - 10.28&lt;&#x2F;h2&gt;
+&lt;p&gt;通过这三四天的信息输入，我发现这条路可行性不是很高，因为现在做这种产品基本都是往AI上去靠了，都是AI+microSass的组合，但由于这方面我的做项目功底不是很深厚，做一个项目即使是结合用各种Coding Agent工具来用的话，依旧是磕磕绊绊的，很多时候都需要我自己去调试，去解决问题，在这个过程中，有点太耗费我的精力了。虽然学的东西之后也可能会用上，但是头上的达摩克利斯之剑，包括最近的组织架构调整时不时就提醒我，我现在的方式能持续吗？我学这些东西，似乎都是很表面的东西，我现在有市场竞争力吗？我目前在市场的价值是什么，我符合哪些业务团队的需要呢？会不会毕业之后就找不到下一份同等的工作了。&lt;&#x2F;p&gt;
+&lt;p&gt;看起来目前的目标又要切换了，不知道能切换多久。&lt;&#x2F;p&gt;
+&lt;p&gt;就我个人而言，感觉其实是对啥都不是很感兴趣，更多的驱动都是来自于外驱，比如更高的报酬。老实说，我对前端的各种技术都不是很感兴趣，基本都是业务需要或者说JD需要，我才会去主动了解xx技术。我更在乎的还是说“get things done”，无论通过什么办法，只要能把事情做好做完就行了，无所谓用什么牛逼的技术，用什么配置。&lt;&#x2F;p&gt;
+&lt;p&gt;但我对了解这些技术同时也不会排斥，相反我经常也会主动去了解这些技术，大多其实是看社区的反应，如果大家都说很牛逼的话，就会引起我的注意，想看看它到底为啥这么牛逼，大家都在吹。&lt;&#x2F;p&gt;
+&lt;p&gt;当我找不到意义的时候，我就会内驱不了自己，就会开始挂机。不知道该干什么，或者说觉得干什么都没有意义，就像现在的业务一样，感觉做不做都一样，做可能更多的就是为了演戏，为了表现自己的产出。这个时候唯一驱动我的就是来自外部的驱动。&lt;&#x2F;p&gt;
+&lt;p&gt;说了这么多，也算是宣告此文的结束了，后面我的目标还是切换回提升自己竞争力了，&lt;strong&gt;先得有饭吃&lt;&#x2F;strong&gt;，才能谈远方。脚踏实地，先走好每一步先吧，先让自己内心安稳起来，等内心强大起来，不再因为这些东西影响到心态，甚至决策的时候，再来考虑这些。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;qian-yan-10-22&quot;&gt;前言 - 10.22&lt;&#x2F;h2&gt;
+&lt;p&gt;经常刷推特，发现一个博主（哥飞SEO）经常介绍做网站赚广告费的帖子。虽然他是为了维持自己的影响力，好卖社群费用，但是他的帖子也不乏存在一些可行性。于是我决定亲自尝试，折腾一下。&lt;&#x2F;p&gt;
+&lt;p&gt;我的折腾思路大概就是，先读一下他写的&lt;a href=&quot;https:&#x2F;&#x2F;x.com&#x2F;gefei55&#x2F;status&#x2F;1748947404383220149&quot;&gt;那些教程&lt;&#x2F;a&gt;，然后输出一下自己的思考以及计划。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;jiao-cheng-xue-xi-jin-du&quot;&gt;教程学习进度&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot; checked=&quot;&quot;&#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;URcdE3VaoYoAx0cOcll8_g&quot;&gt;开篇：网站可以做成一生的事业&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;免费网站的价值在于用户的访问量x停留时长，通过Google Adsense来赚钱&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;del&gt;[x] &lt;a href=&quot;https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;mtJY6TKCVjZQRmeFkWPAfQ&quot;&gt;第0步：学习前端开发基础（针对无编程基础者）&lt;&#x2F;a&gt;&lt;&#x2F;del&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot; checked=&quot;&quot;&#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;V35KGuSqMHhhgr4x1Bzw6Q&quot;&gt;第1步：挖掘出第1个需求&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;如何找到需求，并且创造价值，常见的方法就是抄，看已经赚钱的案例，还有就是构建一个分析的方法论&#x2F;系统，来完成信息的收集，辅助决策。分析的工具这里介绍了两个，semrush 和 similarWeb&lt;&#x2F;p&gt;
+&lt;p&gt;稍微看了一下这两个工具，有点好奇是怎么实现的，业务场景大概是什么样子的。&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot; checked=&quot;&quot;&#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;CJNigdIt8VkfQDangR8Bcg&quot;&gt;第1.5步：用一个公式来判断关键词是否值得做&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;将决策成本降到最低，通过量化固化成一个公式，来判断关键词是否值得做。&lt;&#x2F;p&gt;
+&lt;p&gt;kdroi= volumn * cpc &#x2F; kd ，指标是 kdroi ，也就是优化难度回报率，volumn 是关键词的搜索量，cpc 是关键词的点击单价，kd是关键词优化难度。&lt;&#x2F;p&gt;
+&lt;p&gt;总结就是ROI，弄清楚收益和成本怎么计算就行了，收益就是点击量x点击单价，成本就是关键词优化难度。&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot; checked=&quot;&quot;&#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;0l-1EVPJWAJK6z9w8Bn-FQ&quot;&gt;第2步：分析搜索意图&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;这里的意图，指的是用户搜索的目的，是为了什么。通过Google搜索光标在不同关键词位置的自动补全功能，来看排名在前的搜索词是什么，就能够快速了解关键词背后的目的，以及找到用户的需求，发现对应的竞品。&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;del&gt;[x] &lt;a href=&quot;https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;Mg5utkp0iD_b0RGMbCvA4A&quot;&gt;第3步：根据搜索意图使用ChatGPT的GPT4生成网页养网站&lt;&#x2F;a&gt;&lt;&#x2F;del&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;用AI快速搭建原型，来帮助用户完成他们的目的，以及注意SEO权重，主域名&amp;gt;子域名&amp;gt;子目录&amp;gt;内页&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;del&gt;[x] &lt;a href=&quot;https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;2T8u9QsGEKIv7c6ObSwYpw&quot;&gt;第4步：手动调整布局和样式&lt;&#x2F;a&gt;&lt;&#x2F;del&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot; checked=&quot;&quot;&#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;X95UZmPEKHZZ4rNoBcaoJg&quot;&gt;第5步：内页和内链建设&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;内页：除了首页以外其他的页面，内页需要单独优化SEO，&lt;&#x2F;p&gt;
+&lt;p&gt;内链可以传递关键词权重到内页&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot; checked=&quot;&quot;&#x2F;&gt;
+&lt;del&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;b3_lY793bgiVcuZ2TREF2w&quot;&gt;第6步：利用ChatGPT给网站增加多语言支持&lt;&#x2F;a&gt;&lt;&#x2F;del&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I18n，以及对应语言的路由处理&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot; checked=&quot;&quot;&#x2F;&gt;
+&lt;del&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;B-boMGJsI3bxB8Ih10duRw&quot;&gt;第7步：注册域名，解析域名，部署上线&lt;&#x2F;a&gt;&lt;&#x2F;del&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;优先搞.com&#x2F;.net域名，&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot; checked=&quot;&quot;&#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;lCy2pWnFuP2riO9H0mJbIg&quot;&gt;第8步：添加GA统计代码，提交到Google Search Console，增加外链，等待被收录&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Sitemap，并提交到 Google Search Console&lt;&#x2F;p&gt;
+&lt;p&gt;在其他网站留下自己网站的链接，这就是外链，所以一般得搞个导航站，来增加流量。&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;del&gt;[ ] &lt;a href=&quot;https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;pIQznxcsTV38kq9Ms5sxPA&quot;&gt;第9步：谷歌对于AI生成内容的态度及如何让AI生成高质量内容&lt;&#x2F;a&gt;&lt;&#x2F;del&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;省流：鼓励高质量，无论AI&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot; checked=&quot;&quot;&#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;jtZwh-pDx_xS1BzXyJdJjg&quot;&gt;需求有了，网站也做好了，流量从哪来？&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;推广的五种方式：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;搜索引擎自然流量&lt;&#x2F;li&gt;
+&lt;li&gt;论坛免费发帖自己推广&lt;&#x2F;li&gt;
+&lt;li&gt;付费投放&lt;&#x2F;li&gt;
+&lt;li&gt;用户自发&lt;&#x2F;li&gt;
+&lt;li&gt;信息流推荐系统App&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot; checked=&quot;&quot;&#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;hhxh3pufHxp619sIiwmkwA&quot;&gt;养成好习惯，看到任何一个网站都去看看流量和流量来源分布，再看看搜索流量来自于哪些词&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;怎么分析一个网站的流量&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;看流量&lt;&#x2F;li&gt;
+&lt;li&gt;看相似网站&lt;&#x2F;li&gt;
+&lt;li&gt;看流量来源分布，外链|搜索|广告等等等&lt;&#x2F;li&gt;
+&lt;li&gt;看自然搜索，围绕这个网站，都有哪些搜索词，以及对应的流量是多少&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot; checked=&quot;&quot;&#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;YLi38TLLM936bDsILGUtuA&quot;&gt;我如何通过SEO和Adsense优化，把一个网站广告收入从每月八百多美元提升到每月两千多美元，经验全分享&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;讲优化的，等盈利了再看，大概瞟了一眼就是性能优化，广告位&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;zong-jie&quot;&gt;总结&lt;&#x2F;h2&gt;
+&lt;p&gt;总结之前先吐槽一下，每篇文章其实关键内容不算多，但是它每次都在文章后面打一大串的广告，混字数...&lt;&#x2F;p&gt;
+&lt;p&gt;花了大概两个小时差不多算看完了，包括去使用里面的网站营销工具，Semrush x SimilarWeb 等等，还发现 SimilarWeb 的 bug，点击 Web 给我一直跳转 APP 的营销分析页面，完全不能打开 Web 的那个页面，体验极差。&lt;&#x2F;p&gt;
+&lt;p&gt;这里面我认为最宝藏的就是手把手教你怎么去找需求，分析竞品，这两块东西是之前我所没有认知到位的，之前只是停留在概念上，现在打算去实操一下，后面的实践篇因为自己本身就是开发出身，就跳过了有关技术的部分。&lt;&#x2F;p&gt;
+&lt;p&gt;接下来打算挖掘一下需求，看看有哪些用户的价值点可以挖掘出来。当然肯定不要挖一两个，我们应该搞成图表，来分析做什么的最有可能带来最大的价值。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ru-he-wa-jue-xu-qiu-10-24&quot;&gt;如何挖掘需求 - 10.24&lt;&#x2F;h2&gt;
+&lt;p&gt;首先得是建立大量的信息输入，看看大家一般是怎么做的，于是加了几个 reddit 论坛：r&#x2F;microsaas、r&#x2F;productivity、r&#x2F;developersIndia。但是简单逛了一会，发现不太容易逛，一个因为语言上的差异，虽然有翻译工具，但因为文化差异上的就是很难去理解他们在讲什么东西。为了解决这个问题，我决定简单设计一下我的信息输入习惯。&lt;&#x2F;p&gt;
+&lt;p&gt;目前我的信息输入有两种方式&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;基于推荐系统的推特&lt;&#x2F;li&gt;
+&lt;li&gt;基于RSS订阅的 Folo&lt;&#x2F;li&gt;
+&lt;li&gt;今天在推特上刷到宝玉利用 ChatGPT Atlas 来查看哪些评论值得它回复，这些给了我灵感，兴许我也可以通过这种方式来判断哪些 reddit 帖子值得我读取。&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+</content>
+        
+    </entry>
+</feed>

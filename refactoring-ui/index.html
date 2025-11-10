@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Enable responsiveness on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+      
+        <meta name="description" content="UI&#x2F;UX 学习之路" />
+        <meta property="og:description" content="UI&#x2F;UX 学习之路" />
+        <meta property="twitter:description" content="UI&#x2F;UX 学习之路" />
+      
+    
+
+    <!-- Title -->
+    
+      
+    
+    <title>
+    
+    Refactoring UI
+    
+</title>
+
+    <!-- Additional Facebook Meta Tags -->
+    <meta property="og:site_name" content="" />
+    <meta
+      property="og:url"
+      content="https:&#x2F;&#x2F;flamintune.github.io&#x2F;refactoring-ui&#x2F;"
+    />
+    <meta
+      property="og:type"
+      content="article"
+    />
+    <meta property="og:title" content="Refactoring UI" />
+
+    <!-- Additional Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https:&#x2F;&#x2F;flamintune.github.io&#x2F;refactoring-ui&#x2F;"
+    />
+    <meta name="twitter:title" content="Refactoring UI" />
+
+    <!-- Cover images -->
+    
+    
+
+    <meta
+      property="og:image"
+      content="https:&#x2F;&#x2F;flamintune.github.io&#x2F;icons&#x2F;favicon&#x2F;web-app-manifest-512x512.png"
+    />
+
+    <meta
+      name="twitter:image"
+      content="https:&#x2F;&#x2F;flamintune.github.io&#x2F;icons&#x2F;favicon&#x2F;web-app-manifest-512x512.png"
+    />
+
+
+
+    <!-- Favicons -->
+    
+    <link
+      rel="icon"
+      type="image/png"
+      href="https:&#x2F;&#x2F;flamintune.github.io/icons/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https:&#x2F;&#x2F;flamintune.github.io/icons/favicon/favicon.svg"
+    />
+    <link
+      rel="shortcut icon"
+      href="https:&#x2F;&#x2F;flamintune.github.io/icons/favicon/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https:&#x2F;&#x2F;flamintune.github.io/icons/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Refactoring UI" />
+    <link
+      rel="manifest"
+      href="https:&#x2F;&#x2F;flamintune.github.io/icons/favicon/site.webmanifest"
+    />
+    
+
+    <!-- RSS Feed -->
+    
+
+    <!-- Load Styles -->
+    
+      <link
+        rel="stylesheet"
+        href="https://flamintune.github.io/site.css"
+      />
+    
+
+    <!-- Load Fonts -->
+    
+
+  
+
+
+
+
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+  
+
+
+
+<!-- Forcing Font -->
+<style>
+body {
+  font-family:
+    "JetBrains Mono", Menlo, Monaco, Lucida Console, Liberation Mono,
+    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
+    monospace, serif !important;
+}
+</style>
+
+
+    <!-- Pass Theme Preference as Data Attribute -->
+    <script src="https://flamintune.github.io/js/init-theme.js"></script>
+
+    <!-- Reference return to click position script -->
+    <script defer src="https://flamintune.github.io/js/reference-return.js"></script>
+
+    <!-- Additional scripts -->
+    
+      
+      
+        <script src="https://flamintune.github.io/js/toggle-theme.js"></script>
+      
+      
+
+      
+    
+  </head>
+
+  <!-- Body element (contents of the page) -->
+  <body class="hack main container">
+    
+  
+    
+    
+      
+  
+  <section class="nav-header">
+    <nav
+      itemscope
+      itemtype="http://schema.org/SiteNavigationElement"
+      class="navbar"
+    >
+      <section class="nav-links">
+        
+        <a
+          itemprop="url"
+          class=""
+          href="https://flamintune.github.io"
+        >
+          <span itemprop="name">Home</span>
+        </a>
+        
+        <a
+          itemprop="url"
+          class=""
+          href="https://flamintune.github.io/categories"
+        >
+          <span itemprop="name">Categories</span>
+        </a>
+        
+        <a
+          itemprop="url"
+          class=""
+          href="https://flamintune.github.io/tags"
+        >
+          <span itemprop="name">Tags</span>
+        </a>
+        
+      </section>
+    </nav>
+    <aside class="user-actions-container">
+       
+      <a id="dark-mode-toggle" href="#">
+        <img
+          src="https://flamintune.github.io/icons/sun.svg"
+          id="sun-icon"
+          style="filter: invert(1)"
+          alt="Light mode"
+        />
+        <img
+          src="https://flamintune.github.io/icons/moon.svg"
+          id="moon-icon"
+          alt="Dark mode"
+        />
+      </a>
+        
+      <a
+        href="https:&#x2F;&#x2F;github.com&#x2F;flamintune"
+        class="feed-icon"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://flamintune.github.io/icons/github.svg"
+          id="github-icon"
+          alt="GitHub"
+          class="social-icon"
+        />
+      </a>
+      
+    </aside>
+  </section>
+  
+
+    
+
+
+    <main>
+      
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 itemprop="headline">Refactoring UI</h1>
+        <data class="muted">
+    <svg class="icon i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <data>14 minute read</data>
+    <svg class="icon i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2025-11-05
+</data>
+    </header>
+
+    <article itemprop="articleBody">
+        
+            <!-- If no summary separate from content, just render content -->
+            <h1 id="ledger-refactoring-ui-du-shu-bi-ji">📒 Refactoring UI 读书笔记</h1>
+<p>很久之前，就在推上有人分享过这本书，加上一直以来都对 UI/UX 有一定的兴趣，就选择了这本书作为我的 UI/UX 入门书。这本书是来自于 Tailwind CSS 作者写给开发者的一本 UI 书，里面没有介绍太多的理论知识，而是更多的是一些实践经验。之前也看过一点，因为各种事情加之正反馈太少，便没有再读了下去。2025年11月5日，我决定重新来过。</p>
+<p>本文会有两个部分，一部分是摘抄，另一部分是在读书过程中产生的一些想法。（本来想说是思考，但感觉不够格，还是叫想法更贴切一点）</p>
+<h2 id="xiang-fa">想法</h2>
+<p>Refactoring UI 我感觉更算是一本科普书，里面通过对比正确的设计与糟糕的设计，来说明了一些设计原则。读完前几章，脑子里面逐步建立起了有关书中提到的一些原则，比如从功能开始设计，系统化设计，保持一致，视觉层次结构，色调/颜色的选择。</p>
+<p>目前的话，更多的就有了个模模糊糊的概念，很符合第一次读完的感受，知识输入了，但还没有被用到，以及理解。</p>
+<p>写到这里，让我突然想说一句：“UI 本质是在设计用户的注意力，是在引导用户的注意力”</p>
+<h2 id="zhai-chao">摘抄</h2>
+<blockquote>
+<p>从功能开始，而不是从布局开始</p>
+</blockquote>
+<blockquote>
+<p>优雅或经典的外观，不妨在设计中使用衬线字体;营造俏皮的效果，可以使用圆角无衬线字体;</p>
+</blockquote>
+<blockquote>
+<p>蓝色既安全又熟悉--没有人会抱怨蓝色;金子可能会说 "昂贵 "和 "精致";粉红色更有趣一些，不那么严肃;</p>
+</blockquote>
+<blockquote>
+<p>border-radius 较小的设计非常中性，本身并不能传达出太多个性;边框半径越大，感觉越俏皮;完全没有边界半径则让人感觉严肃或正式得多;</p>
+</blockquote>
+<blockquote>
+<p>无论你选择什么，保持一致都很重要。在同一界面中混合使用方角和圆角几乎总是比坚持使用其中一种看起来更糟糕。</p>
+</blockquote>
+<blockquote>
+<p>将一切系统化,你拥有的系统越多，你的工作速度就越快，你就越不会猜疑自己的决定。您需要的系统包括（以及其他任何让你感觉是在为低水平的设计决策而苦恼的事情）：</p>
+<p>字体大小
+字体重量
+线条高度
+颜色
+外边距
+内边距
+宽度
+高度
+盒式阴影
+边框圆角
+边框宽度
+不透明度</p>
+</blockquote>
+<blockquote>
+<p>你不必提前定义所有这些东西，只需确保你是以系统为中心的思维方式来进行设计的。在做出新的决定时，寻找机会引入新的系统，尽量避免两次做出同样的小决定。</p>
+</blockquote>
+<blockquote>
+<p>等级层次就是一切，视觉层次结构指的是界面中各元素相互之间的重要程度，是让人感觉"设计"过的最有效工具。</p>
+</blockquote>
+<blockquote>
+<p>尺寸并不代表一切；与其让字体大小独自承担所有重任，不如尝试使用字体重量或颜色来完成同样的工作。</p>
+</blockquote>
+<blockquote>
+<p>尽量使用两到三种颜色：</p>
+<p>深色用于主要内容（如文章标题）
+次要内容（如文章发表日期）的灰色区域
+浅灰色用于三级内容（可能是页脚中的版权声明）</p>
+</blockquote>
+<blockquote>
+<p>对于用户界面工作来说，两种字体重量通常就足够了：</p>
+<p>大部分文字使用正常的字体重量（400 或 500，取决于字体）。
+对于想要强调的文字，可使用较重的字体（600 或 700）。</p>
+</blockquote>
+<blockquote>
+<p>通过取消强调来强调；与其进一步强调你想引起注意的元素，不如想想如何去强调与之竞争的元素</p>
+</blockquote>
+<blockquote>
+<p>标签是最后的手段</p>
+</blockquote>
+<blockquote>
+<p>与普通文字相比，粗体文字让人感觉突出的原因是粗体文字覆盖了更大的表面积--在相同的空间内，文字使用的像素要多于背景使用的像素。</p>
+</blockquote>
+<blockquote>
+<p>利用对比度补偿重量；就像粗体文字一样，图标（尤其是实心图标）一般都很"重"，而且覆盖的面积很大。一个简单而有效的方法就是降低图标的对比度，使其颜色更柔和。（对比度指的是颜色和背景的对比）</p>
+</blockquote>
+<blockquote>
+<p>利用重量补偿对比度；就像降低对比度有助于淡化厚重的元素一样，增加重量也是为低对比度元素增添亮点的好方法。</p>
+</blockquote>
+<blockquote>
+<p>语义是次要的；语义是按钮设计的重要组成部分，但这并不意味着你可以忘记层次结构。页面上的每个操作都处于重要性金字塔的某个位置。大多数页面只有一个真正的主要操作，几个不太重要的次要操作，以及几个很少使用的三级操作。在设计这些操作时，必须明确它们在层次结构中的位置。</p>
+</blockquote>
+<blockquote>
+<p>开始时留白过多；应删除空白，而不是增加空白；先给某样东西过多的空间，然后将其移除，直到你对结果满意为止。</p>
+</blockquote>
+<blockquote>
+<p>重要的是要有意识地做出这样的决定，而不仅仅是默认设置。</p>
+</blockquote>
+<blockquote>
+<p>建立间距和尺寸系统；在为用户界面中的元素确定完美尺寸时，您不应该在 120px 和 125px 之间吹毛求疵。一个像素一个像素痛苦地试验任意值，往好了说会大大降低速度，往坏了说会产生丑陋、不一致的设计。</p>
+<p>取而代之的是，将自己限制在事先定义好的一组有限制的值范围内。</p>
+</blockquote>
+<blockquote>
+<p>线性比例尺不起作用；创建一个间距和大小系统并不像 "确保所有东西都是 4px 的倍数"那么简单；一个系统要想真正发挥作用，就必须考虑到相对于其他系统的相邻值之间的差值。</p>
+</blockquote>
+<blockquote>
+<p>如果您希望您的系统能让您轻松做出尺寸决定，请确保刻度中没有两个值的距离超过 25%。</p>
+</blockquote>
+<blockquote>
+<p>不必填满整个屏幕；</p>
+</blockquote>
+<blockquote>
+<p>缩小画布；如果你很难在大画布上设计出小界面，那就缩小画布！很多时候，当限制条件真实存在时，设计小界面会更容易一些。</p>
+</blockquote>
+<blockquote>
+<p>如果您要构建一个响应式网络应用程序，请尝试从约 400px 的画布开始，先设计移动布局。一旦你有了满意的 移动设计，就把它放到更大尺寸的屏幕上，调整在小屏幕上感觉不妥的地方。你可能不需要像你想象的那样做太多改动。</p>
+</blockquote>
+<blockquote>
+<p>列式思维</p>
+</blockquote>
+<blockquote>
+<p>相对尺寸不能缩放；一般来说，在大屏幕上较大的元素需要比已经相当小的元素收缩得更快。</p>
+</blockquote>
+<blockquote>
+<p>事物应独立缩放的理念不仅适用于在不同屏幕尺寸下调整元素的大小，也适用于单个组件的属性。</p>
+</blockquote>
+<blockquote>
+<p>放弃一切都需要按比例缩放的想法--给自己独立微调的自由，让设计更容易适应多种环境。</p>
+</blockquote>
+<blockquote>
+<p>无论何时，当你依靠间距来连接一组元素时，一定要确保该组元素周围的空间大于内部空间--难以理解的界面总是看起来更糟糕。</p>
+</blockquote>
+<blockquote>
+<p>建立类型标度；一种方法是使用比例来计算音阶类型，如 4:5（"大三度"）、2:3（"全五度"），或者是 "黄金比例"，即 1:1.618。这通常被称为 "模块音阶"。你可以从一个合理的基础值（16px 是常见的，因为它是大多数浏览器的默认字体大小）开始，应用你的比例得到下一个值，然后应用你的比例得到下一个值，如此循环。</p>
+</blockquote>
+<blockquote>
+<p>对于界面设计来说，更实用的方法是直接手工取值。这样你就不必担心子像素四舍五入的误差，而且你可以完全控制哪些尺寸存在，而不是把这项工作外包给某个数学公式。</p>
+</blockquote>
+<blockquote>
+<p>在制作字体标尺时，不要使用 em 单位来定义尺寸。由于 em 单位是相对于当前字体大小而言的，因此嵌套元素的计算字体大小通常并不是缩放比例中的实际值。</p>
+</blockquote>
+<blockquote>
+<p>使用好的字体；忽略少于五种重量的字体；最安全的选择是相当中性的无衬线字体；如果你实在不相信自己的品味，一个不错的选择就是依靠系统字体堆栈</p>
+</blockquote>
+<blockquote>
+<p>控制段落长度；为了获得最佳的阅读体验，请将段落宽度控制在每行 45 到 75 个字符之间。在网络上做到这一点的最简单方法是使用 em 单位，它是相对于当前字体大小而言的。20-35em的宽度将使您的段落处于正确的范围内。</p>
+</blockquote>
+<blockquote>
+<p>行高和字体大小成反比--小字体使用较高的行高，大字体使用较矮的行高。</p>
+</blockquote>
+<blockquote>
+<p>并非每个链接都需要颜色；</p>
+</blockquote>
+<blockquote>
+<p>摒弃十六进制，采用 HSL；使用十六进制或 RGB，在视觉上有很多共同点的颜色在代码中看起来却完全不一样。HSL 通过使用人眼直观感知的属性（色相、饱和度和明度）来表示色彩，从而解决了这一问题。</p>
+</blockquote>
+<blockquote>
+<p>你需要的颜色比你想象的要多;您的实际需求:只有五个十六进制代码是无法构建任何东西的。要建造真正的东西，你需要一套更全面的颜色供你选择。</p>
+<p>灰色。文本、背景、面板、表单控件--界面中几乎所有的东西都是灰色的。</p>
+<p>主色调
+大多数网站都需要一种或两种颜色，用于主要操作、活动导航元素等。这些
+颜色决定了网站的整体外观--让人联想到 Facebook 的 "蓝色"。</p>
+<p>除主色调外，每个网站还需要一些强调色来向用户传达不同的信息。</p>
+<p>总之，一个复杂的用户界面需要多达十种不同的颜色，每种颜色有 5-10 种色调，这种情况并不少见。</p>
+</blockquote>
+<p>后面剩下的内容大概还有色彩，深度，处理图像，点睛之笔（优化），这部分内容打算先不看了，等需要的时候再来看看。</p>
+
+        
+    </article>
+
+    <!-- Comment section -->
+    
+      
+    
+
+
+    <!-- Page footer -->
+    
+    <footer>
+        <hr>
+        <p>
+            
+            
+                
+                in <a href="https://flamintune.github.io/categories/ui-ux/">ui-ux</a>
+            
+            
+                and
+                tagged
+                
+                    <a href="https://flamintune.github.io/tags/ui-ux/">ui-ux</a>
+                    
+                
+            
+        </p>
+
+        <!-- Revision history (optional) -->
+        
+          
+            
+              
+            
+          
+        
+
+        
+        
+    </footer>
+
+
+</article>
+
+
+    </main>
+    
+
+  </body>
+</html>

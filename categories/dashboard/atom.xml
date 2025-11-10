@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title> - dashboard</title>
+    <link rel="self" type="application/atom+xml" href="https://flamintune.github.io/categories/dashboard/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://flamintune.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-09-24T00:00:00+00:00</updated>
+    <id>https://flamintune.github.io/categories/dashboard/atom.xml</id>
+    <entry xml:lang="en">
+        <title>我的Dashboard</title>
+        <published>2025-09-24T00:00:00+00:00</published>
+        <updated>2025-09-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://flamintune.github.io/initial/"/>
+        <id>https://flamintune.github.io/initial/</id>
+        
+        <content type="html" xml:base="https://flamintune.github.io/initial/">&lt;p&gt;这是一个技术博客，用来展示我在技术领域的学习和思考。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;mu-qian-dui-wo-zui-zhong-yao-de-shi-qing&quot;&gt;目前对我最重要的事情&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;想全是问题，做全是答案。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;又开始摇摆了，又开始思考做啥好了。&lt;&#x2F;p&gt;
+&lt;p&gt;代码只是工具，很多产品都是在做着做着，就想要是有个xx能帮我就好了。&lt;&#x2F;p&gt;
+&lt;p&gt;我现在脑子里面有三个关键词：项目、费曼学习法、自媒体&lt;&#x2F;p&gt;
+&lt;p&gt;在学习一个东西的时候，将它当成一个项目来做，然后用费曼学习法去输出，最后发布到自媒体平台上去。&lt;&#x2F;p&gt;
+&lt;p&gt;在这个过程中，就会自然而然去找到一些需求，从而做成一个Sass产品。&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如何在榨取业务对自己的价值，而不是让业务去榨取自己的价值？&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;虽然我的业务比较烂，一直都是CRUD，但是目前有AI，我可以探索怎么跟AI协作，多写Prompt，不写代码&lt;&#x2F;p&gt;
+&lt;p&gt;Code is cheap, show me the prompt&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;del&gt;开始折腾自己感兴趣的事情了，首先玩玩SEO，看看大家都有什么骚操作。 —— 2025.10.22&lt;&#x2F;del&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;del&gt;开始重新思考自己的最重要的事情，究其根还是得认识自己的本性，认清自己到底想要成为什么样的人，顺势而为，先找到自己想要做的事情。&lt;&#x2F;del&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;del&gt;至少目前为止，我脑子里面有个想法就是每天跟大模型多聊聊，看看怎么挖掘自己的本性，找到自己的价值点。&lt;&#x2F;del&gt; 2025.10.11&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;del&gt;最重要的事情只有一件，当最重要的事情完成了，其他的事情也就都迎刃而解了。&lt;&#x2F;del&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;del&gt;“很多人做的东西一个季度下来，uv &amp;lt; 100，技术挑战可能主要是如何在30%人力投入Oncall+四步法灌顶的同时如期交付CRUD代码。”&lt;&#x2F;del&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;&lt;del&gt;目前我最重要的事情就是，&lt;strong&gt;提升自己的市场竞争力&lt;&#x2F;strong&gt;，有随时能够&lt;strong&gt;跑路&lt;&#x2F;strong&gt;以及找下家的底气，而不是出来之后就失业没有收入了。即保障能长时间维持自己的生活水平。&lt;&#x2F;del&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;del&gt;目前最大的达摩克利斯之剑就是，手上的项目太烂了，因为是内部系统，做的事也都比较简单，没有什么技术含量，也没有什么价值，非常非常容易暴雷。&lt;&#x2F;del&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;del&gt;## 我感兴趣的领域&lt;&#x2F;del&gt;&lt;&#x2F;p&gt;
+&lt;!-- 弄成一张表格, 第一行是大领域, 第二行是小方向, 第三行是学习状态 --&gt;
+&lt;!-- ~~~ --&gt;
+&lt;!-- | 领域     | 方向              | 状态       |
+| -------- | ----------------- | ---------- |
+| 前端     | SSR-&gt;RSC          | 尝试输出中 |
+| 后端     | Mysql 底层原理    | 未开始     |
+| 机器学习 | 大模型，Happy-LLM | 学习中     |
+| 数学     | 线性代数          | 未开始     | --&gt;
+&lt;!-- ~~~ --&gt;
+</content>
+        
+    </entry>
+</feed>

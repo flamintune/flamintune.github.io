@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title> - algorithm</title>
+    <link rel="self" type="application/atom+xml" href="https://flamintune.github.io/categories/algorithm/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://flamintune.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-11-05T00:00:00+00:00</updated>
+    <id>https://flamintune.github.io/categories/algorithm/atom.xml</id>
+    <entry xml:lang="en">
+        <title>蒙特卡洛树搜索</title>
+        <published>2025-11-05T00:00:00+00:00</published>
+        <updated>2025-11-05T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://flamintune.github.io/monte-carlo/"/>
+        <id>https://flamintune.github.io/monte-carlo/</id>
+        
+        <content type="html" xml:base="https://flamintune.github.io/monte-carlo/">&lt;h2 id=&quot;meng-te-qia-luo-shu-sou-suo&quot;&gt;蒙特卡洛树搜索&lt;&#x2F;h2&gt;
+&lt;p&gt;在看 &lt;a href=&quot;https:&#x2F;&#x2F;openreview.net&#x2F;forum?id=z5uVAKwmjf&quot;&gt;AFlow&lt;&#x2F;a&gt; 这篇论文的时候, 发现里面有提到蒙特卡洛树搜索 (MCTS) 这个算法。我对这个算法完全是一无所知，只是知道它是一种搜索算法，和其他搜索算法（遗传算法，巴拉巴拉什么的一样），都是寻找特定空间的最优解问题。&lt;&#x2F;p&gt;
+&lt;p&gt;在和 Gemini 聊了很多轮后，我也是对 MCTS 这个算法有了一定的了解。它的基本流程可以简单地概括为利用+探索，拓展，模拟，反向传播。下面简单记录一下我对这个算法的理解，也顺带在输出的过程中，发现那些还有困惑的地方。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ta-suo-mian-lin-de-chang-jing-wei-he-xu-yao-mcts&quot;&gt;它所面临的场景：为何需要 MCTS？&lt;&#x2F;h2&gt;
+&lt;p&gt;在聊 MCTS 怎么做之前，我们得先聊聊&lt;strong&gt;为什么&lt;&#x2F;strong&gt;需要它。&lt;&#x2F;p&gt;
+&lt;p&gt;传统的游戏 AI 算法，比如 Minimax（极小化极大算法），本质上是一种 DFS（深度优先搜索）。它试图暴力搜索整棵游戏树，评估所有可能的未来，然后找到一个绝对最优解。&lt;&#x2F;p&gt;
+&lt;p&gt;对于五子棋，这或许还行。但对于围棋（Go）呢？&lt;&#x2F;p&gt;
+&lt;p&gt;围棋的游戏树复杂度（所有可能的合法走法）比宇宙中的原子总数还多。你不可能算完它。&lt;&#x2F;p&gt;
+&lt;p&gt;这就是 MCTS 要解决的核心问题：当搜索空间（所有可能的未来）过于庞大，以至于无法暴力算完时，你该如何做出一个足够好的甚至是最优的决策？&lt;&#x2F;p&gt;
+&lt;p&gt;MCTS 的答案是：我放弃算尽一切，转而使用智慧的采样。我不会均匀地搜索所有路径，而是会把我的计算资源集中在那些看起来有前途的路径上。它用大数定律的统计学思想，来代替确定性的计算。只要我足够多的迭代，最终就能逐渐收敛到一个近似最优的解。&lt;&#x2F;p&gt;
+&lt;p&gt;AlphaGo 成功的背后也有 MCTS 的身影。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;suan-fa-liu-cheng&quot;&gt;算法流程&lt;&#x2F;h2&gt;
+&lt;p&gt;MCTS 的算法流程是一个不断迭代的循环，大致分为四步&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;选择 (Selection)：从根节点出发，根据一个评分公式，一路向下，找到一个最值得深入的路径，直到抵达我们&lt;strong&gt;已知树的边界&lt;&#x2F;strong&gt;。&lt;&#x2F;li&gt;
+&lt;li&gt;拓展 (Expansion)：在&lt;strong&gt;边界&lt;&#x2F;strong&gt;处，添加一个新的、未访问过的子节点。&lt;&#x2F;li&gt;
+&lt;li&gt;模拟 (Simulation)：从这个新节点开始，随机快进下到底，看这一局是赢是输。即快速模拟当前节点的希望。&lt;&#x2F;li&gt;
+&lt;li&gt;反向传播：将赢&#x2F;输的结果，传回给路径上的所有父节点，更新它们的统计数据。&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;这个循环会重复成千上万次（比如在 1 秒钟内）。时间到！停止循环。查看根节点的所有子节点，选择一个最稳健的作为最终走法。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;xuan-ze&quot;&gt;选择&lt;&#x2F;h3&gt;
+&lt;p&gt;这是 MCTS 最核心、最巧妙的一步。它解决的问题：我应该在哪个已知的分支上投入更多的‘思考’？&lt;&#x2F;p&gt;
+&lt;p&gt;它用一个 UCT(Upper Confidence Bound 1 applied to Trees，树的置信上限)公式完美地平衡了两个概念：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;利用 (Exploitation)：选择那个当前看起来胜率最高的走法。&lt;&#x2F;li&gt;
+&lt;li&gt;探索 (Exploration)：选择那个我还不太了解，但不确定性很高的走法（万一它是奇招呢？）。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;写到这里的时候，我想起了之前学习强化学习，也有类似的利用x探索的策略，比如 Q learning 中的 epsilon-greedy 策略。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;UCT 分数 = (w_i &#x2F; n_i) + C * sqrt(ln(N) &#x2F; n_i)&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;我们来拆解它：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;w_i &#x2F; n_i (平均胜率)：这就是利用。w_i 是这个节点赢的次数，n_i 是它总共被访问的次数。这个值越高，说明它历史战绩越好。&lt;&#x2F;li&gt;
+&lt;li&gt;C * sqrt(ln(N) &#x2F; n_i) (探索奖励)：这就是探索。&lt;&#x2F;li&gt;
+&lt;li&gt;N 是父节点被访问的总次数。&lt;&#x2F;li&gt;
+&lt;li&gt;n_i 还是这个子节点被访问的次数。&lt;&#x2F;li&gt;
+&lt;li&gt;关键： 如果一个子节点 n_i 很小（我们很少试它），1 &#x2F; n_i 就会很大，导致整个探索奖励飙升。这会强制算法去将资源倾斜到这个冷门选项。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;选择阶段的完整流程是：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;从根节点 R 开始。查看其所有已被访问过的子节点（A, B, C）。&lt;&#x2F;li&gt;
+&lt;li&gt;使用 UCT 公式计算 A, B, C 的分数。&lt;&#x2F;li&gt;
+&lt;li&gt;选择分数最高的那个（比如 B），跳到 B。&lt;&#x2F;li&gt;
+&lt;li&gt;重复这个过程：在 B 节点，再用 UCT 公式选出它分数最高的子节点（D, E, F...），再跳过去...&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;这个过程何时停止？这个UCT 跳跃会一直持续，直到我们第一次撞到一个节点 P，它满足：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;P 本身是被访问过的。&lt;&#x2F;li&gt;
+&lt;li&gt;P 至少有一个子节点是未被访问的（n_child = 0）。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;这个 P 节点，就是我们这条最值得路径的终点，也是我们已知树的边界。选择阶段结束， 我们把 P 节点交给下一步拓展。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;tuo-zhan&quot;&gt;拓展&lt;&#x2F;h3&gt;
+&lt;p&gt;因为选择阶段，我们已经选出了树的边界了，所以我们需要拓展这个边界。&lt;&#x2F;p&gt;
+&lt;p&gt;拓展的过程很简单：在 P 节点，随机选择一个未被访问过的子节点（比如 I），并添加到 MCTS 树中。P 节点必然有一个未被访问的子节点，因为我们在选择阶段，选出来的 P 至少有一个子节点是未被访问的。&lt;&#x2F;p&gt;
+&lt;p&gt;这个新节点 I 的初始数据是：w_I = 0，n_I = 0。现在，I 是我们这轮循环的主角。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;mo-ni&quot;&gt;模拟&lt;&#x2F;h3&gt;
+&lt;p&gt;我们刚创建了新节点 I，对它一无所知（0&#x2F;0 没法用 UCT）。我们该如何快速知道它是好棋还是臭棋？&lt;&#x2F;p&gt;
+&lt;p&gt;答案是：随机快进（也叫 Playout 或 Rollout）。&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;从 I 节点代表的局面开始。&lt;&#x2F;li&gt;
+&lt;li&gt;算法随机地帮我方走一步。&lt;&#x2F;li&gt;
+&lt;li&gt;算法随机地帮对手走一步。&lt;&#x2F;li&gt;
+&lt;li&gt;重复这个随机互下的过程，直到游戏分出胜负（比如黑棋赢了）。&lt;&#x2F;li&gt;
+&lt;li&gt;记录下这个结果（比如 +1 代表赢，0 代表输）。&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;这就像石头剪刀布一样，单次看运气成分很大，但根据「大数定律」，只要我们模拟的次数足够多，这个粗略的估计就会非常接近真实胜率。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;fan-xiang-chuan-bo&quot;&gt;反向传播&lt;&#x2F;h3&gt;
+&lt;p&gt;我们拿到了上一步模拟的胜负结果（比如 +1）。&lt;&#x2F;p&gt;
+&lt;p&gt;这一步的工作，就是把这个结果递归地更新回路径上的所有祖先节点。&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;更新 I：w_I 变为 1，n_I 变为 1。&lt;&#x2F;li&gt;
+&lt;li&gt;更新 I 的父亲 P：w_P (总胜场) +1，n_P (总访问) +1。&lt;&#x2F;li&gt;
+&lt;li&gt;更新 P 的父亲...：w +1, n +1。&lt;&#x2F;li&gt;
+&lt;li&gt;一直更新到根节点 R：w_R +1, n_R +1。&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;至此，一个完整的 MCTS 循环结束。算法会立即从根节点 R 重新开始下一次循环。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;zui-zhong-jue-ce-shi-jian-dao-liao&quot;&gt;最终决策：时间到了！&lt;&#x2F;h3&gt;
+&lt;p&gt;当 1 秒钟的思考时间用完，MCTS 循环停止。算法必须在棋盘上落子了。&lt;&#x2F;p&gt;
+&lt;p&gt;它会回到根节点 R，查看它的所有子节点（A, B, C...），然后做出最终选择。&lt;&#x2F;p&gt;
+&lt;p&gt;标准是什么？不是胜率最高，甚至也不是赢的次数最多，而是&lt;strong&gt;访问次数 n 最高&lt;&#x2F;strong&gt;的那个节点。&lt;&#x2F;p&gt;
+&lt;p&gt;为什么？&lt;&#x2F;p&gt;
+&lt;p&gt;为什么不是胜率 (w&#x2F;n)？ * 节点 A: w=1, n=1 (胜率 100%)&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;节点 B: w=900, n=1000 (胜率 90%)&lt;&#x2F;li&gt;
+&lt;li&gt;胜率会选 A，但 A 只是运气好的小样本事件，B 才是被 1000 次访问验证过的好棋。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;为什么不是胜场 (w)？&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;节点 A: w=100, n=1000 (胜率 10%)&lt;&#x2F;li&gt;
+&lt;li&gt;节点 B: w=90, n=100 (胜率 90%)&lt;&#x2F;li&gt;
+&lt;li&gt;胜场会选 A，但 A 其实是被访问了 1000 次才赢 100 次的臭棋。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;n (访问次数) 是最稳健的指标。一个节点的 n 很高，说明 MCTS 的 UCT 公式（在利用和探索的反复权衡中）最终决定将最多的计算资源投入给它。它是那个被算法千锤百炼后选出来的、最值得信赖的走法。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;alphago-zhong-de-mcts-shen-jing-wang-luo-yu-zuo-bi-qi&quot;&gt;AlphaGo 中的 MCTS：神经网络与作弊器&lt;&#x2F;h2&gt;
+&lt;p&gt;MCTS 算法很强，但它的模拟阶段（随机快进）又慢又蠢。如果能优化这个阶段，效率会大大提升。
+AlphaGo 的做法就是用深度学习来替换MCTS 的短板。它不是只用一个作弊器，而是用了&lt;strong&gt;两个&lt;&#x2F;strong&gt;：&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;价值网络 (Value Network)&lt;&#x2F;strong&gt;：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;替换了模拟 (第 3 步)&lt;&#x2F;strong&gt;。&lt;&#x2F;li&gt;
+&lt;li&gt;MCTS 不再需要随机快进到底了。当它拓展出一个新节点 &lt;code&gt;I&lt;&#x2F;code&gt; 时，它直接把 &lt;code&gt;I&lt;&#x2F;code&gt; 的局面丢给价值网络。&lt;&#x2F;li&gt;
+&lt;li&gt;这个网络会&lt;strong&gt;瞬间&lt;&#x2F;strong&gt;给出一个胜率估计（比如 &lt;code&gt;0.73&lt;&#x2F;code&gt;）。这个结果比随机快进1000 次得到的 &lt;code&gt;+1&lt;&#x2F;code&gt; 或 &lt;code&gt;0&lt;&#x2F;code&gt; 要&lt;strong&gt;准确得多&lt;&#x2F;strong&gt;。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;策略网络 (Policy Network)&lt;&#x2F;strong&gt;：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;优化了拓展 (第 2 步)&lt;&#x2F;strong&gt;。&lt;&#x2F;li&gt;
+&lt;li&gt;MCTS 在拓展节点 &lt;code&gt;P&lt;&#x2F;code&gt; 时，不再是随机挑一个子节点了。&lt;&#x2F;li&gt;
+&lt;li&gt;它会把 &lt;code&gt;P&lt;&#x2F;code&gt; 局面丢给策略网络，这个网络会返回一个概率分布，告诉你：&lt;code&gt;P&lt;&#x2F;code&gt; 的 10 个下一步里，走 &lt;code&gt;I&lt;&#x2F;code&gt; 的可能性是 50%，走 &lt;code&gt;J&lt;&#x2F;code&gt; 的可能性是 30%...&lt;&#x2F;li&gt;
+&lt;li&gt;MCTS 会&lt;strong&gt;优先&lt;&#x2F;strong&gt;去拓展那些策略网络推荐的、看起来更像好棋的节点。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;AlphaGo = MCTS (作为总指挥框架) + 两个神经网络 (作为专家顾问)。
+它把 MCTS 的统计学智慧和 深度学习的模式识别直觉完美地结合在了一起。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;zong-jie&quot;&gt;总结&lt;&#x2F;h2&gt;
+&lt;p&gt;等几天后，再回过头来复习看下，看能忘多少...&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
